@@ -5,11 +5,11 @@
 
  //Database Connection
 
- $conn = New mysqli('localhost','root','root','id18533678_connect');
+ $conn = New mysqli('localhost','root','','msa');
  if($conn->connect_error){
    die('Connection Failed:'.$conn->connect_error);
  }else{
-      $stmt=$conn->prepare("insert into connect(Name,Division,Email)
+      $stmt=$conn->prepare("insert into login(Name,Division,Email)
           values(?,?,?)");
       $stmt->bind_param("sss",$Name,$Div,$Email);
       $stmt->execute();
